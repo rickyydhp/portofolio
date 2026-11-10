@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101512">
+  <meta name="description" content="Portofolio Ricky Yudha Pratama, profesional operasional dan mahasiswa Sistem Informasi.">
+  <title>Ricky Yudha Pratama — Portofolio</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --paper: #101512;
+      --ink: #edf2eb;
+      --muted: #a6b0a5;
+      --line: #303a32;
+      --green: #b9d69b;
+      --lime: #d4ef89;
+      --white: #171e19;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .page { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand { font-size: .88rem; font-weight: 750; letter-spacing: .03em; text-decoration: none; }
+    nav { display: flex; gap: 27px; }
+    nav a { color: var(--muted); font-size: .83rem; text-decoration: none; }
+    nav a:hover, .text-link:hover { color: var(--green); }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      align-items: center;
+      gap: 70px;
+      min-height: 570px;
+      padding: 82px 0 90px;
+    }
+    .hero .eyebrow, .hero h1, .hero .intro, .hero .actions, .hero .portrait {
+      animation: rise-in .7s both;
+    }
+    .hero h1 { animation-delay: .12s; }
+    .hero .intro { animation-delay: .22s; }
+    .hero .actions { animation-delay: .32s; }
+    .hero .portrait { animation-delay: .2s; }
+    @keyframes rise-in {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green);
+      font-size: .75rem;
+      font-weight: 750;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 25px; height: 1px; background: currentColor; content: ""; }
+    h1 {
+      max-width: 700px;
+      margin: 19px 0 20px;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7.5vw, 6.1rem);
+      font-weight: 400;
+      letter-spacing: -.065em;
+      line-height: .99;
+    }
+    h1 em {
+      color: var(--green);
+      background: linear-gradient(110deg, #88a975 20%, #e0f3c9 45%, #88a975 70%);
+      background-size: 220% 100%;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: text-shimmer 5s ease-in-out infinite;
+      font-weight: 400;
+    }
+    @keyframes text-shimmer {
+      0%, 100% { background-position: 100% 50%; }
+      50% { background-position: 0 50%; }
+    }
+    .intro { max-width: 570px; color: var(--muted); font-size: 1.06rem; }
+    .actions { display: flex; align-items: center; gap: 22px; margin-top: 30px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 47px;
+      padding: 0 20px;
+      border: 1px solid var(--green);
+      border-radius: 3px;
+      background: #78966b;
+      color: #101512;
+      font-size: .85rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .button:hover { background: #93b67d; }
+    .text-link { font-size: .85rem; font-weight: 650; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .portrait {
+      display: grid;
+      width: 246px;
+      aspect-ratio: 4 / 5;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid #465447;
+      background:
+        radial-gradient(ellipse at 75% 22%, rgba(137,176,112,.38), transparent 34%),
+        linear-gradient(145deg, #28372c, #1a241d);
+      color: #d4efb1;
+    }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 24%; }
+    .section { padding: 82px 0; border-top: 1px solid var(--line); }
+    .section-heading {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 35px;
+      margin-bottom: 38px;
+    }
+    .section-index { color: var(--green); font-size: .75rem; font-weight: 750; letter-spacing: .12em; }
+    h2 {
+      margin: -8px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 400;
+      letter-spacing: -.045em;
+      line-height: 1.1;
+    }
+    .about-copy { max-width: 720px; margin-left: 255px; color: var(--muted); font-size: 1.03rem; }
+    .about-copy p { margin: 0 0 14px; }
+    .skill-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .skill-card {
+      min-height: 190px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      animation: rise-in .7s both;
+      transition: transform .25s ease, border-color .25s ease;
+    }
+    .skill-card:nth-child(2) { animation-delay: .12s; }
+    .skill-card:nth-child(3) { animation-delay: .24s; }
+    .skill-card:hover { transform: translateY(-5px); border-color: var(--green); }
+    .skill-card h3 { margin: 0 0 15px; font-size: .9rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { padding: 5px 9px; border: 1px solid var(--line); border-radius: 2px; color: var(--muted); font-size: .76rem; }
+    .projects { display: grid; gap: 15px; }
+    .project {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr) 170px;
+      gap: 24px;
+      align-items: start;
+      padding: 27px 0;
+      border-top: 1px solid var(--line);
+      animation: rise-in .65s both;
+    }
+    .project:nth-child(2) { animation-delay: .12s; }
+    .project:nth-child(3) { animation-delay: .24s; }
+    .project:last-child { border-bottom: 1px solid var(--line); }
+    .project-number { color: var(--green); font-family: var(--serif); font-size: 1.7rem; }
+    .project h3 { margin: 0 0 4px; font-family: var(--serif); font-size: 1.55rem; font-weight: 400; }
+    .project-meta { color: var(--muted); font-size: .82rem; }
+    .project p { max-width: 690px; margin: 12px 0; color: var(--muted); font-size: .91rem; }
+    .project-impact { padding: 12px 14px; background: #202b23; color: #d4efb1; font-size: .82rem; }
+    .project-impact strong { display: block; margin-bottom: 5px; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
+    .project-impact span { display: block; }
+    .achievement-dashboard {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 30px;
+      margin-top: 40px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+    .achievement-dashboard h3 { margin: 0 0 18px; font-family: var(--serif); font-size: 1.5rem; font-weight: 400; }
+    .achievement-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .achievement-stat { padding: 14px 12px; border: 1px solid var(--line); }
+    .achievement-stat strong { display: block; color: var(--green); font-family: var(--serif); font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 400; line-height: 1.15; }
+    .achievement-stat span { display: block; margin-top: 7px; color: var(--muted); font-size: .74rem; line-height: 1.45; }
+    .achievement-chart { margin: 0; }
+    .chart-row + .chart-row { margin-top: 19px; }
+    .chart-label { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 7px; font-size: .8rem; }
+    .chart-label span { color: var(--muted); }
+    .chart-label strong { color: var(--green); }
+    .chart-track { height: 10px; overflow: hidden; background: #303a32; }
+    .chart-bar {
+      width: var(--bar-width);
+      height: 100%;
+      transform: scaleX(0);
+      transform-origin: left;
+      background: linear-gradient(90deg, #78966b 0%, #b9d69b 45%, #e0f3c9 55%, #78966b 100%);
+      background-size: 220% 100%;
+      animation: chart-grow .95s .25s ease-out forwards, chart-flow 2.8s 1.2s linear infinite;
+    }
+    @keyframes chart-grow { to { transform: scaleX(1); } }
+    @keyframes chart-flow {
+      from { background-position: 100% 50%; }
+      to { background-position: -120% 50%; }
+    }
+    .chart-caption { margin-top: 16px; color: var(--muted); font-size: .72rem; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+    .experience-list { display: grid; gap: 0; }
+    .experience {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 35px;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+    }
+    .experience:last-child { border-bottom: 1px solid var(--line); }
+    .period { color: var(--muted); font-size: .82rem; }
+    .experience h3 { margin: -5px 0 2px; font-size: 1rem; }
+    .experience .company { color: var(--green); font-size: .86rem; }
+    .experience p { margin: 9px 0 0; color: var(--muted); font-size: .9rem; }
+    .assignment-heading { margin: 20px 0 0; font-family: var(--serif); font-size: 1.4rem; font-weight: 400; }
+    .credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+    .credentials h3 { margin: 0 0 14px; font-size: .9rem; }
+    .credential { padding: 14px 0; border-top: 1px solid var(--line); }
+    .credential strong { display: block; font-size: .9rem; }
+    .credential span { color: var(--muted); font-size: .82rem; }
+    .credential-note { margin: 0; padding: 14px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; }
+    .contact {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 58px 0 68px;
+      border-top: 1px solid var(--line);
+    }
+    .contact h2 { max-width: 600px; margin: 10px 0 0; }
+    .contact-links { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; color: var(--muted); font-size: .85rem; }
+    footer { display: flex; justify-content: space-between; padding: 18px 0 25px; border-top: 1px solid var(--line); color: var(--muted); font-size: .75rem; }
+    @media (max-width: 720px) {
+      .page { width: min(100% - 36px, 560px); }
+      nav { gap: 13px; }
+      nav a { font-size: .74rem; }
+      .hero { grid-template-columns: 1fr; gap: 35px; min-height: auto; padding: 67px 0; }
+      .portrait { width: min(100%, 220px); aspect-ratio: 5 / 3; }
+      .section { padding: 60px 0; }
+      .section-heading { grid-template-columns: 1fr; gap: 13px; margin-bottom: 25px; }
+      .about-copy { margin-left: 0; }
+      .skill-grid { grid-template-columns: 1fr; }
+      .skill-card { min-height: auto; }
+      .achievement-dashboard { grid-template-columns: 1fr; gap: 25px; padding: 20px; }
+      .project { grid-template-columns: 40px minmax(0, 1fr); gap: 14px; }
+      .project-impact { grid-column: 2; }
+      .experience { grid-template-columns: 1fr; gap: 7px; }
+      .credentials { grid-template-columns: 1fr; gap: 28px; }
+      .contact { align-items: flex-start; flex-direction: column; }
+      footer { gap: 15px; }
+    }
+    @media (max-width: 430px) {
+      nav { gap: 9px; }
+      nav a { font-size: .68rem; }
+      .brand { font-size: .8rem; }
+      .actions { align-items: flex-start; flex-direction: column; gap: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="page topbar">
+    <a class="brand" href="#beranda">RICKY YUDHA PRATAMA</a>
+    <nav aria-label="Navigasi utama">
+      <a href="#tentang">Tentang</a>
+      <a href="#keahlian">Keahlian</a>
+      <a href="#proyek">Sorotan</a>
+      <a href="#pengalaman">Pengalaman</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero" id="beranda">
+      <div>
+        <div class="eyebrow">Operasional · Administrasi · Sistem Informasi</div>
+        <h1>Halo, saya<br><em>Ricky Yudha Pratama</em></h1>
+        <p class="intro">Car Part Manager di PT Rapik Karya Mandiri dengan pengalaman mengelola operasional parkir, koordinasi tim, pelaporan pendapatan, dan layanan pelanggan. Saya juga mahasiswa S1 Sistem Informasi yang tertarik pada teknologi informasi, pengolahan data, dan troubleshooting sistem.</p>
+        <div class="actions">
+          <a class="button" href="#pengalaman">Lihat pengalaman</a>
+          <a class="text-link" href="mailto:ricky.ciherank@gmail.com">Hubungi saya ↗</a>
+        </div>
+      </div>
+      <div class="portrait">
+        <img src="foto-ricky.jpeg" alt="Foto profesional Ricky Yudha Pratama">
+      </div>
+    </section>
+
+    <section class="section" id="tentang">
+      <div class="section-heading">
+        <div class="section-index">01 / PROFIL</div>
+        <h2>Mengenal saya</h2>
+      </div>
+      <div class="about-copy">
+        <p>Saya merupakan lulusan SMK Asy-Syifa jurusan Rekayasa Perangkat Lunak dan saat ini menempuh pendidikan S1 Sistem Informasi di Institut Teknologi Bisnis &amp; Bahasa Dian Cipta Cendekia. Saya memiliki ketertarikan pada teknologi informasi, cepat belajar, dan mudah beradaptasi dengan sistem baru.</p>
+        <p>Dalam pekerjaan, saya menangani operasional parkir, koordinasi tim, laporan pendapatan, pengelolaan kas, serta layanan pelanggan. Saya siap terus mengembangkan kemampuan teknis maupun nonteknis dan berkontribusi dalam lingkungan kerja profesional.</p>
+      </div>
+    </section>
+
+    <section class="section" id="keahlian">
+      <div class="section-heading">
+        <div class="section-index">02 / KAPABILITAS</div>
+        <h2>Keahlian &amp; alat</h2>
+      </div>
+      <div class="skill-grid">
+        <article class="skill-card">
+          <h3>Keahlian teknis &amp; operasional</h3>
+          <div class="tags">
+            <span class="tag">Manajemen sistem &amp; operasional</span><span class="tag">Pengolahan data</span><span class="tag">Analisis sederhana</span><span class="tag">SOP &amp; workflow</span><span class="tag">Troubleshooting CCTV / sistem parkir</span>
+          </div>
+        </article>
+        <article class="skill-card">
+          <h3>Perangkat &amp; teknologi</h3>
+          <div class="tags">
+            <span class="tag">Microsoft Excel</span><span class="tag">CCTV</span><span class="tag">Sistem parkir</span><span class="tag">Troubleshooting komputer</span>
+          </div>
+        </article>
+        <article class="skill-card">
+          <h3>Kolaborasi &amp; cara kerja</h3>
+          <div class="tags">
+            <span class="tag">Problem solving</span><span class="tag">Cepat belajar</span><span class="tag">Adaptif</span><span class="tag">Komunikasi tim</span><span class="tag">Berpikir analitis</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="proyek">
+      <div class="section-heading">
+        <div class="section-index">03 / SOROTAN PEKERJAAN</div>
+        <h2>Kontribusi dalam operasional</h2>
+      </div>
+      <div class="projects">
+        <article class="project">
+          <div class="project-number">01</div>
+          <div>
+            <h3>Operasional parkir harian</h3>
+            <div class="project-meta">Cakupan kerja · PT Rapik Karya Mandiri</div>
+            <p>Mengelola operasional parkir harian, memastikan kepatuhan terhadap SOP, mengatur lalu lintas kendaraan, dan mengoptimalkan area parkir.</p>
+          </div>
+          <div class="project-impact"><strong>Capaian</strong><span>500–1.200 kendaraan per hari (mobil dan motor).</span><span>Waktu antrean gerbang masuk/keluar berkurang 25% melalui optimalisasi alur lalu lintas dan kesiapan menangani kendala teknis.</span></div>
+        </article>
+        <article class="project">
+          <div class="project-number">02</div>
+          <div>
+            <h3>Koordinasi dan pengembangan tim</h3>
+            <div class="project-meta">Kepemimpinan operasional</div>
+            <p>Memimpin tim, menyusun jadwal kerja, memberikan pelatihan staf, dan menangani keluhan pelanggan secara profesional.</p>
+          </div>
+          <div class="project-impact"><strong>Capaian</strong><span>Memimpin, mengawasi, dan melatih 15–20 staf: kasir, juru parkir, dan personel keamanan.</span><span>Mengatur 3 shift untuk cakupan pengawasan operasional 24/7.</span></div>
+        </article>
+        <article class="project">
+          <div class="project-number">03</div>
+          <div>
+            <h3>Pelaporan dan pemantauan sistem</h3>
+            <div class="project-meta">Administrasi · Kas · Sistem parkir</div>
+            <p><strong>Microsoft Excel:</strong> gunakan untuk mencatat dan merekap data pendapatan serta kas sebagai bahan laporan.</p>
+            <p><strong>CCTV:</strong> pantau keamanan area dan bantu pengecekan awal saat ada kendala sistem.</p>
+            <p><strong>Sistem parkir:</strong> pantau kesiapan sistem agar operasional kendaraan dan area parkir berjalan lancar.</p>
+          </div>
+          <div class="project-impact"><strong>Capaian</strong><span>Rekap pendapatan kas harian di Excel dengan akurasi pencatatan 100% (zero disparity).</span><span>Menangani gangguan sistem/CCTV dengan cepat untuk meminimalkan downtime operasional parkir.</span></div>
+        </article>
+      </div>
+      <div class="achievement-dashboard">
+        <div>
+          <h3>Ringkasan capaian</h3>
+          <div class="achievement-stats">
+            <div class="achievement-stat"><strong>500–1.200</strong><span>kendaraan per hari</span></div>
+            <div class="achievement-stat"><strong>15–20</strong><span>staf dikoordinasi</span></div>
+            <div class="achievement-stat"><strong>3 shift</strong><span>cakupan operasional 24/7</span></div>
+          </div>
+        </div>
+        <figure class="achievement-chart" aria-label="Grafik capaian persentase operasional">
+          <h3>Grafik capaian</h3>
+          <div class="chart-row">
+            <div class="chart-label"><span>Pengurangan waktu antrean</span><strong>25%</strong></div>
+            <div class="chart-track"><div class="chart-bar" style="--bar-width: 25%"></div></div>
+          </div>
+          <div class="chart-row">
+            <div class="chart-label"><span>Akurasi pencatatan Excel</span><strong>100%</strong></div>
+            <div class="chart-track"><div class="chart-bar" style="--bar-width: 100%"></div></div>
+          </div>
+          <figcaption class="chart-caption">Persentase sesuai capaian yang dicantumkan; volume kendaraan dan jumlah staf ditampilkan terpisah.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="pengalaman">
+      <div class="section-heading">
+        <div class="section-index">04 / PERJALANAN</div>
+        <h2>Pengalaman kerja</h2>
+      </div>
+      <div class="experience-list">
+        <article class="experience">
+          <div class="period">Peran</div>
+          <div>
+            <h3>Car Part Manager</h3>
+            <div class="company">PT Rapik Karya Mandiri</div>
+            <p>Mengelola operasional parkir harian dan kepatuhan SOP; mengatur lalu lintas kendaraan serta area parkir; memimpin dan melatih tim; mengelola laporan pendapatan dan kas; memantau sistem parkir dan keamanan; serta menangani keluhan pelanggan.</p>
+          </div>
+        </article>
+        <h3 class="assignment-heading">Lokasi penugasan &amp; durasi</h3>
+        <article class="experience">
+          <div class="period">2 tahun</div>
+          <div>
+            <h3>RSUD Sawangan Depok</h3>
+            <p>Menstabilkan operasional parkir jangka panjang di fasilitas kesehatan publik dengan arus kendaraan pasien dan pengunjung yang padat serta dinamis.</p>
+          </div>
+        </article>
+        <article class="experience">
+          <div class="period">3 bulan</div>
+          <div>
+            <h3>Lokbin Meruya Ilir</h3>
+            <p>Menata area parkir komersial/pasar binaan dan menertibkan sirkulasi lalu lintas di kawasan dengan aktivitas perdagangan yang padat.</p>
+          </div>
+        </article>
+        <article class="experience">
+          <div class="period">4 bulan</div>
+          <div>
+            <h3>RSUD Budhi Asih</h3>
+            <p>Mendukung pemulihan sistem operasional dan koordinasi tim pengamanan/parkir di rumah sakit rujukan dengan mobilitas ambulans dan pengunjung yang tinggi.</p>
+          </div>
+        </article>
+        <article class="experience">
+          <div class="period">2 bulan</div>
+          <div>
+            <h3>Kantor Walikota Depok</h3>
+            <p>Mendukung pengamanan, pengaturan sirkulasi, dan ketertiban area parkir di pusat pemerintahan dengan kunjungan pejabat dan tamu instansi.</p>
+          </div>
+        </article>
+        <article class="experience">
+          <div class="period">3 bulan</div>
+          <div>
+            <h3>RSUD Palembang</h3>
+            <p>Menjalankan penugasan lintas daerah untuk audit operasional, pembenahan sistem parkir rumah sakit regional, dan penyelesaian kendala di lapangan.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="pendidikan">
+      <div class="section-heading">
+        <div class="section-index">05 / PEMBELAJARAN</div>
+        <h2>Pendidikan &amp; sertifikasi</h2>
+      </div>
+      <div class="credentials">
+        <div>
+          <h3>Pendidikan formal</h3>
+          <div class="credential">
+            <strong>Institut Teknologi Bisnis &amp; Bahasa Dian Cipta Cendekia</strong>
+            <span>S1 Sistem Informasi · 2024–sekarang</span>
+          </div>
+          <div class="credential">
+            <strong>SMK Asy-Syifa</strong>
+            <span>Rekayasa Perangkat Lunak · 2018–2021</span>
+          </div>
+        </div>
+        <div>
+          <h3>Sertifikasi &amp; kursus</h3>
+          <p class="credential-note">Saat ini saya belum memiliki sertifikasi atau kursus tambahan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="kontak">
+      <div>
+        <div class="eyebrow">Mari terhubung</div>
+        <h2>Mari berdiskusi tentang peluang dan kolaborasi.</h2>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:ricky.ciherank@gmail.com">ricky.ciherank@gmail.com</a>
+        <a href="tel:+6289512417863">+62 895-1241-7863</a>
+        <span>Domisili: Depok</span>
+        <a href="https://github.com/rickyydhp" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+  <footer class="page">
+    <span>© 2026 Ricky Yudha Pratama</span>
+    <span>Dibuat dengan cermat, berfokus pada dampak.</span>
+  </footer>
+</body>
+</html>
